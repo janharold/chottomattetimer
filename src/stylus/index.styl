@@ -1,0 +1,163 @@
+@import 'global'
+
+logosize = 120px
+
+.logo
+  position fixed
+  width logosize
+  top calc(50vh - 60px)
+  right calc(50vw - 60px)
+  
+  img 
+    max-width 100%
+
+  .notif
+    position absolute
+    font-family Mali
+    background #da9833
+    color #fff
+    border-radius 12px
+    padding 9px 15px 12px
+    text-align center
+    font-size 1.2em
+    width 160px
+    
+    top -65px
+    right -30px
+
+.container
+  display grid
+  grid-template-columns 50% 50%
+  grid-template-rows 50% 50%
+  height 100vh
+  min-height 600px
+  min-width 767px
+  
+section
+  padding 24px
+  
+  
+  h2,h3
+    reset(all)
+    font-size 1.4em
+    
+  h2
+    position absolute
+
+
+.time
+  background #d9eeec
+  color #3c70a4
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  
+  h2 
+    top 24px
+  
+
+
+  
+  
+    
+.minutes-grid 
+  
+  display grid
+  grid-template-columns 33.3% 33.3% 33.3%
+  grid-template-rows 33.3% 33.3% 33.3%
+  grid-column-gap 10px
+  grid-row-gap 10px
+  margin-right 24px
+
+
+.controls
+  margin 25px 25px -25px
+  
+.btn
+  background #3c70a4
+  border-radius 3px
+  color #fff
+  cursor pointer
+  font-family CarinoSansSemiBold, sans-serif
+  padding 12px
+  display block
+  border none
+  transition all 300ms
+  
+  &:hover
+    background lighten(@background, 15%)
+  
+
+.timer
+  background #64b2cd
+  color #d9eeec
+  display flex
+  justify-content center
+  align-items center
+  
+  
+  .countdown
+    display flex
+    font-size 26vh
+
+
+.music
+  background #3c70a4
+  color #da9833
+
+
+.ambient
+  background #da9833
+  color #3c70a4
+  
+  h2
+    right 24px
+    
+
+
+.radiobox
+  text-align center
+  position relative
+
+  input
+    opacity 0
+    position absolute
+    box-sizing border-box
+    cursor pointer
+    width 100%
+    height 34px
+    
+    display block
+    padding 8px
+  
+  input:hover ~ label
+    background rgba(#fff, 0.4)
+
+  input:checked ~ label
+    background rgba(#fff, 0.2)
+    border 2px solid #da9833
+    color #da9833
+
+  label
+    background #fff  
+    border-radius 3px
+    border 2px solid #fff
+    box-sizing border-box
+    padding 8px 8px 0
+    width 100%
+    height 100%
+    display block
+    transition all 300ms
+    
+  input:disabled ~ label
+    opacity 0.1
+  input:disabled:checked ~ label
+    opacity 1 
+    
+
+.hide
+  display none
+  
+.display
+  display inline-block

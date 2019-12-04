@@ -1,0 +1,51 @@
+
+<html>
+  <head>
+    <title>Chotto Matte Timer - Timer for 1 minute</title>
+    <link href="assets/css/timer.css" rel="stylesheet"/>
+  </head>
+  <body><img class="logo" src="assets/images/chottomatte-250x250.png"/>
+    <div class="wrapper">
+      <p class="title">LIKE &amp; SUBSCRIBE </p>
+      <h1 class="time">
+        <div id="minutes">00</div>: 
+        <div id="seconds">00</div>
+      </h1>
+      <h2 id="timesUp">TIMES UP!</h2>
+    </div>
+  </body>
+  <script>
+    function setTimer(min) {
+    
+      var d1 = new Date (),
+        d2 = new Date ( d1 );
+        d2.setMinutes ( d1.getMinutes() + min);
+      
+      var interval = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = d2 - now;
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    
+        document.getElementById("minutes").innerHTML = makeMeTwoDigits(minutes);
+        document.getElementById("seconds").innerHTML = makeMeTwoDigits(seconds);  
+        
+        if (distance < 0) {
+           clearInterval(interval);
+           document.getElementById("minutes").innerHTML = "00";
+           document.getElementById("seconds").innerHTML = "00";
+           document.getElementById("timesUp").style.opacity = 1;
+         } 
+        
+      }, 1000)
+      
+    }
+    
+    function makeMeTwoDigits(n){
+        return (n < 10 ? "0" : "") + n;
+    }
+    
+    setTimer(1);
+  </script>
+</html>
